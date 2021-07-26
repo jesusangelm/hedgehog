@@ -41,5 +41,6 @@ defmodule Streamer.Binance do
     Logger.debug(
       "Recibido evento trade " <> "#{trade_event.symbol}@#{trade_event.price}"
     )
+    Naive.send_event(trade_event)
   end
 end
